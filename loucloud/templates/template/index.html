@@ -1,0 +1,45 @@
+{% extends "base/base.html" %}
+{% from "macros/_form.html" import render_form %}
+
+{% block body %}
+<div class="btn btn-success" data-toggle="modal" data-target="#myModal">+ Add Template</div>
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>templatename</th>
+            <th>relateimageID</th>
+            <th>cpunum</th>
+            <th>ramnum</th>
+            <th>edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in template_list%}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.templatename }}</td>
+            <td>{{ item.relateimageID }}</td>
+            <td>{{ item.cpunum }}</td>
+            <td>{{ item.ramnum }}</td>
+            <td>
+                <a href="{{ url_for('template.delete_template', template_id=item.id )}}"><span class="btn btn-default">Delete</span></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Add Template</h4>
+            </div>
+            <div class="modal-body">
+                {{render_form(url_for('template.index'), form)}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

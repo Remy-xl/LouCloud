@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+TEMPLATE_OK = 0
+TEMPLATE_ERROR = 1
+TEMPLATE_CPUNUM = 1
+TEMPLATE_RAMNUM = 512
+
+TEMPLATE_STATUS = {
+    TEMPLATE_OK: 'OK',
+    TEMPLATE_ERROR: 'ERROR',
+}
