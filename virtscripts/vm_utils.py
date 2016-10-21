@@ -140,7 +140,7 @@ def deleteVM(vmname):
     
     return True
     
-#print createVM("vm1", 1, 102400, "/home/shiyanlou/louvm1.qcow2")
+##print createVM("vm1", 1, 102400, "/home/shiyanlou/louvm1.qcow2")
 #print getVNCPort('vm1')
 
 
